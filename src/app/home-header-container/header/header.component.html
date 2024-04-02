@@ -46,7 +46,7 @@
                         <li class="nav-item"><a class="nav-link" href="/Contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item"><a href="/Shop-cart" class="cart"><span class="ti-bag"></span></a></li>
+                        <li class="nav-item"><a href="/Shop-cart" class="cart"><span class="ti-bag">{{itemCount}}</span></a></li>
                         <li class="nav-item">
                             <button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
                         </li>
@@ -58,11 +58,13 @@
     <div class="search_input" id="search_input_box">
         <div class="container">
             <form class="d-flex justify-content-between">
-                <input type="text" class="form-control" id="search_input" placeholder="Search Here">
-                <button type="submit" class="btn"></button>
+                <input type="text" class="form-control" id="search_input" placeholder="Search Products"  (input)="onSearchTextChange()">
+                <!-- <button class="btn"></button> -->
                 <span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
             </form>
         </div>
     </div>
 </header>
 <!-- End Header Area -->
+<!-- (input)="onSearchTextChange($event)"  (click)="updateSearchText(searchInput)"  #searchInput-->
+

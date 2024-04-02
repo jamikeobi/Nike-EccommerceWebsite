@@ -1,0 +1,37 @@
+<div class="ekart-product-detail-info" scroll>
+    <div class="ekart-product-detail-close">
+        <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="ekart-product-detail-image">
+        <img [src]="product.imageURL" alt="">
+    </div>
+
+    <div class="ekart-product-detail">
+        <div class="ekart-product-detail-name">
+            <h2>{{product.name}}</h2>
+        </div>
+        <div class="ekart-product-detail-gbc">
+            <span>MEN</span>
+            <span>NIKE</span>
+            <span>SPORTS</span>
+        </div>
+        <div class="ekart-product-detail-price">
+            <p>
+                <b>Price Each Pair</b>
+                <span style="background-color: red; color: white;"><s>${{product.price}}</s></span>
+                <span  style="background-color: green; color: white;" *ngIf="product.discountPrice"><s>${{product.discountPrice}}</s></span> (Inclusive of all taxes)
+            </p>
+        </div>
+        <div class="ekart-product-detail-size">
+            <div style="padding: 5px 0px; border-bottom: #ccc 2px solid;">
+                <h2>{{product.size}}</h2>
+            </div>
+            <div style="margin-top: 20px;">
+                <span class="ekart-product-detail-available-size">6</span>
+                <span class="ekart-product-detail-available-size">7</span>
+                <span class="ekart-product-detail-available-size">8</span>
+                <span class="ekart-product-detail-available-size">9</span>
+            </div>
+        </div>
+    </div>
+</div>

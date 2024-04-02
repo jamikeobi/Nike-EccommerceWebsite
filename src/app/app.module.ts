@@ -3,8 +3,8 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home-header-container/home/home.component';
+import { HeaderComponent } from './home-header-container/header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ShopContainerComponent } from './shop-container/shop-container.component';
 import { ShopCategoryComponent } from './shop-container/shop-category/shop-category.component';
@@ -19,6 +19,8 @@ import { LoginComponent } from './login/login.component';
 import { TrackingComponent } from './tracking/tracking.component';
 import { RegisterComponent } from './login/register/register.component';
 import { ContactComponent } from './contact/contact.component';
+import { HomeHeaderContainerComponent } from './home-header-container/home-header-container.component';
+import { ProductDetailComponent } from './home-header-container/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     TrackingComponent,
     RegisterComponent,
-    ContactComponent
+    ContactComponent,
+    HomeHeaderContainerComponent,
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,

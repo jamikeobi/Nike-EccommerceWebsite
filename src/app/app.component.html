@@ -1,5 +1,12 @@
-<app-header></app-header>
+<!--
+     <app-header [itemCount]="itemCount" (searchTextEvent)="updateSearchText($event)"></app-header> 
+
+    (addToCartEvent)="updateItemCount($event)" [searchText]="searchText"
+-->
+
+<app-home-header-container></app-home-header-container>
 
 <router-outlet></router-outlet>
+<!-- <app-home ></app-home> -->
 
 <app-footer></app-footer>
