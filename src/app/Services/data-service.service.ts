@@ -1,15 +1,11 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
-import { Products } from '../../Models/products';
+import { Injectable } from '@angular/core';
 
-@Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+@Injectable({
+  providedIn: 'root'
 })
-export class HomeComponent {
+export class DataServiceService {
 
-  selectedProducts: Products;
-  Product = [
+  private data: any[] =  [
     {
       id: 1,
       name: 'addidas New Hammer sole for Sports person',
@@ -105,7 +101,7 @@ export class HomeComponent {
     },
     {
       id: 7,
-      name: 'addidas New Hammer sole for Sports person',
+      name: 'Ebuka',
       description: 'Description for Product 7',
       brand: 'Brand ABCDE',
       gender: 'Male',
@@ -120,7 +116,7 @@ export class HomeComponent {
     },
     {
       id: 8,
-      name: 'addidas New Hammer sole for Sports person',
+      name: 'Jamike',
       description: 'Description for Product 8',
       brand: 'Brand A',
       gender: 'Male',
@@ -135,27 +131,10 @@ export class HomeComponent {
       slug: 'product-1',
     }
   ];
-
-
-  // products: string[] = []; // Assuming products is an array of strings
-  // filteredProducts: string[] = [];
-
-  // ngOnChanges() {
-  //   this.filteredProducts = this.products.filter(product =>
-  //     product.toLowerCase().includes(this.searchText.toLowerCase())
-  //   );
-  // }
-
-  @Input() searchText: string = '';
   
-  @Output() addToCartEvent: EventEmitter<any> = new EventEmitter<any>();
-  itemCount: number = 0;
-  // num: number = parseInt(this.itemCount);
-
-  addToCart(event: any){
-    this.addToCartEvent.emit(this.itemCount);
-    // console.log('Update should wrk')
-    // console.log(this.itemCount++);
-  //  this.addToCartEvent.emit(this.num);
+  constructor() { }
+  
+  getProducts(): any[] {
+    return this.data;
   }
 }

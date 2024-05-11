@@ -1,0 +1,192 @@
+<!-- Start Header Area -->
+<header class="header_area sticky-header">
+  <div class="main_menu">
+    <nav class="navbar navbar-expand-lg navbar-light main_box">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <a class="navbar-brand logo_h" href="/Home"
+          ><img src="../../assets/img/logo.png" alt=""
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div
+          class="collapse navbar-collapse offset"
+          id="navbarSupportedContent"
+        >
+          <ul class="nav navbar-nav menu_nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/Home">Home</a>
+            </li>
+            <li class="nav-item submenu dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Shop</a
+              >
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="/Shop-category">Shop Category</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Shop-ProductDetails"
+                    >Product Details</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Shop-checkout">Product Checkout</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Shop-cart">Shopping Cart</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Confirmation">Confirmation</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item submenu dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Blog</a
+              >
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="/Blog-main">Blog</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Blog-details">Blog Details</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item submenu dropdown">
+              <a
+                href="#"
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Pages</a
+              >
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="/Login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/Tracking">Tracking</a>
+                </li>
+                <!-- <li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li> -->
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/Contact">Contact</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a href="/Shop-cart" class="cart"><span class="ti-bag">    {{totalItems }} </span></a>
+            </li>
+            <li class="nav-item">
+              
+              <!-- <button class="search">
+                <span class="lnr lnr-magnifier" id="search"></span>
+              </button> -->
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="search_input" id="search_input_box">
+    <div class="container">
+      <!-- <form class="d-flex justify-content-between">
+        <input
+          type="text"
+          class="form-control"
+          id="search_input"
+          placeholder="Search Products"
+        /> -->
+        <!-- <button class="btn"></button>
+        <span
+          class="lnr lnr-cross"
+          id="close_search"
+          title="Close Search"
+        ></span>
+      </form> -->
+    </div>
+  </div>
+</header>
+
+<input
+  type="text"
+  class="form-control"
+  id="search_input"
+  placeholder="Search Products"
+  [(ngModel)]="searchQuery"
+  (input)="search()"
+/>
+
+<!-- <div *ngIf="searchResults.length > 0">
+    <div *ngFor="let result of searchResults">
+        {{result.name}} - {{result.category}}
+    </div>
+</div> -->
+
+<div *ngFor="let result of searchResults">
+  <!-- <! Display each search result here>  -->
+
+  <!-- single product -->
+  <div class="col-lg-3 col-md-6">
+    <div class="single-product" *ngFor="let result of searchResults">
+      <img class="img-fluid" [src]="result.imageURL" alt="" />
+      <div class="product-details">
+        <h6>{{result.name}}</h6>
+        <div class="price">
+          <h6>{{result.price}}</h6>
+          <h6 class="l-through">$210.00</h6>
+        </div>
+        <div class="prd-bottom">
+          <a href="" class="social-info">
+            <span class="ti-bag"></span>
+            <p class="hover-text">add to bag</p>
+          </a>
+          <a href="" class="social-info">
+            <span class="lnr lnr-heart"></span>
+            <p class="hover-text">Wishlist</p>
+          </a>
+          <a href="" class="social-info">
+            <span class="lnr lnr-sync"></span>
+            <p class="hover-text">compare</p>
+          </a>
+          <a href="" class="social-info">
+            <span class="lnr lnr-move"></span>
+            <p class="hover-text">view more</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- single product -->
+</div>
+<!-- End Header Area -->
+<!-- (input)="onSearchTextChange($event)"  (click)="updateSearchText(searchInput)"  #searchInput  (input)="onSearchTextChange()"-->
